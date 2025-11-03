@@ -17,6 +17,8 @@ source:
     - remove_binary_function.patch
     # c.f. https://github.com/delphes/delphes/pull/154
     - use-range-of-supported-cmake.patch
+    # c.f. https://github.com/qibin2020/delphes/commit/2104fd9
+    - Add-ResonanceDecayFilterHook.patch
 
 build:
   number: 5
@@ -51,6 +53,7 @@ tests:
       - test -f "${PREFIX}"/bin/DelphesHepMC3
       - test -f "${PREFIX}"/bin/DelphesLHEF
       - test -f "${PREFIX}"/bin/DelphesPythia8
+      - test -f "${PREFIX}"/bin/DelphesPythia8Filtered
       - test -f "${PREFIX}"/bin/DelphesROOT
       - test -f "${PREFIX}"/bin/DelphesSTDHEP
 
