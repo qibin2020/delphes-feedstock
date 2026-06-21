@@ -11,9 +11,12 @@ source:
   patches:
     # std::prev_permutation needs <algorithm>, not transitively included on osx
     - add-missing-algorithm-include.patch
+    # Adds DelphesPythia8Filtered (DelphesPythia8 + ResonanceDecayFilterHook)
+    # c.f. https://github.com/qibin2020/delphes/commit/2104fd9
+    - Add-ResonanceDecayFilterHook.patch
 
 build:
-  number: 2
+  number: 3
   skip:
     - win
   script:
@@ -47,6 +50,7 @@ tests:
         - DelphesHepMC3
         - DelphesLHEF
         - DelphesPythia8
+        - DelphesPythia8Filtered
         - DelphesROOT
         - DelphesSTDHEP
 
